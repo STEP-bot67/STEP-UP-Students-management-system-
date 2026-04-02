@@ -1,11 +1,24 @@
-<div align="center">
+# STEP UP - Student Management System
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+This application is ready for deployment to **Netlify** via **GitHub**.
 
-  <h1>Built with AI Studio</h2>
+## Deployment Steps
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+1.  **Push to GitHub**: Initialize a Git repository and push your code to a GitHub repository.
+2.  **Connect to Netlify**:
+    -   Log in to [Netlify](https://www.netlify.com/).
+    -   Click **"Add new site"** > **"Import an existing project"**.
+    -   Select **GitHub** and choose your repository.
+3.  **Configure Build Settings**:
+    -   **Build Command**: `npm run build`
+    -   **Publish Directory**: `dist`
+    -   *Note: These are already configured in `netlify.toml`.*
+4.  **Environment Variables**:
+    -   Go to **Site Settings** > **Environment variables**.
+    -   Add `GEMINI_API_KEY` with your Gemini API key.
+5.  **Deploy**: Netlify will automatically build and deploy your site.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Configuration Files Added
 
-</div>
+-   `netlify.toml`: Configures the build command and publish directory for Netlify.
+-   `public/_redirects`: Ensures that Single Page Application (SPA) routing works correctly on Netlify.

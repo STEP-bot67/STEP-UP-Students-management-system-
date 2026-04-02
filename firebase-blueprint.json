@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "student": {
+      "title": "Student",
+      "description": "A student in the system.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string", "description": "The student's ID number." },
+        "district": { "type": "string", "description": "The district the student belongs to." },
+        "centre": { "type": "string", "description": "The centre the student belongs to." },
+        "skill": { "type": "string", "description": "The skill the student is learning." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the student was added." }
+      },
+      "required": ["studentId", "district", "centre", "skill"]
+    },
+    "attendance": {
+      "title": "Attendance",
+      "description": "A weekly attendance record for a student.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string", "description": "The ID of the student." },
+        "centre": { "type": "string", "description": "The centre for this attendance record." },
+        "date": { "type": "string", "format": "date", "description": "The Friday date of the attendance." },
+        "isPresent": { "type": "boolean", "description": "Whether the student was present." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the record was created." }
+      },
+      "required": ["studentId", "centre", "date", "isPresent"]
+    },
+    "centre": {
+      "title": "Centre",
+      "description": "A district centre.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The name of the centre." },
+        "district": { "type": "string", "description": "The district the centre is in." }
+      },
+      "required": ["name", "district"]
+    }
+  },
+  "firestore": {
+    "students": { "schema": "student", "description": "Collection of students." },
+    "attendance": { "schema": "attendance", "description": "Collection of attendance records." },
+    "centres": { "schema": "centre", "description": "Collection of centres." }
+  }
+}
